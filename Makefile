@@ -12,4 +12,4 @@ clean-all: clean
 	docker system prune -f
 
 docker-build:
-	docker build -f docker/centos-jdk8.dockerfile -t $(IMG):latest .
+	docker build -t $(IMG):latest .
