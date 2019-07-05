@@ -1,5 +1,5 @@
 IMAGE_PREFIX = reynoldsm88/
-IMAGE_NAME = magi
+IMAGE_NAME = centos-jdk
 IMG := $(IMAGE_PREFIX)$(IMAGE_NAME)
 
 info:
@@ -12,4 +12,4 @@ clean-all: clean
 	docker system prune -f
 
 docker-build:
-	docker build -f docker/centos-jdk8.dockerfile -t reynoldsm88/centos-jdk8:latest .
+	docker build -f docker/centos-jdk8.dockerfile -t $(IMG):latest .
