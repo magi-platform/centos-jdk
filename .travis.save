@@ -1,0 +1,21 @@
+language: C
+
+install: make
+
+services:
+  - docker
+
+before_install:
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+stages:
+  - build
+  - name: push
+    if: branch = master
+
+jobs:
+  include:
+    - stage: build
+      script: make build
+    - stage: push
+      script: make push
