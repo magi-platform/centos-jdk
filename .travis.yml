@@ -9,12 +9,12 @@ before_script:
   echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
 
 build:
-  script: make build-all
+  script: make docker-build
   on:
     tags: true
     all_branches: true
 
 deploy:
-  script: make push-all
+  script: make docker-push
   on:
     branch: master

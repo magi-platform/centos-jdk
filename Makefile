@@ -13,3 +13,6 @@ clean-all: clean
 
 docker-build:
 	docker build -t $(IMG):latest .
+
+docker-push:
+	docker push $(IMG):latest .
