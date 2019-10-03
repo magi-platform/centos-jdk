@@ -15,4 +15,4 @@ docker-build:
 	docker build -t $(IMG):latest .
 
 docker-push:
-	docker push $(IMG):latest .
+	docker push $(IMG):latest
