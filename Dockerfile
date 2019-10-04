@@ -11,7 +11,7 @@ RUN yum install -y java-1.8.0-openjdk && \
     yum clean all && \
     rm -r -f /var/cache/yum
 
-ENV GLOBAL_JAVA_OPTS "-Dfile.encoding=UTF-8"
 ENV JAVA_HOME /usr
+ENV GLOBAL_JAVA_OPTS "-Dfile.encoding=UTF-8"
 
-CMD /bin/bash
+ENTRYPOINT /bin/bash
