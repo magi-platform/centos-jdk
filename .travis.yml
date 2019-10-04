@@ -13,12 +13,11 @@ jobs:
     - stage: "build"
       name: "Docker build"
       script: make docker-build
-    - stage: deploy
-      name: "push to Dockerhub"
-      script: make docker-push
 
-stages:
-  stages:
-  - build
-  - name: deploy
-    if: branch = master
+before_deploy:
+  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+
+deploy:
+  script: make docker-push
+  on:
+    branch: master
