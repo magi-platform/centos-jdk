@@ -15,6 +15,4 @@ RUN yum install -y java-1.8.0-openjdk && \
 ENV JAVA_HOME /usr
 ENV GLOBAL_JAVA_OPTS "-Dfile.encoding=UTF-8"
 
-COPY ./conf/sysctl.conf /etc/sysctl.conf
-
 ENTRYPOINT /bin/bash
