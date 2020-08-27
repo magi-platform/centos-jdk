@@ -1,6 +1,8 @@
 name: build-only
 on:
   pull_request:
+    branches:
+      - '!master'
 
 jobs:
   build-only:
